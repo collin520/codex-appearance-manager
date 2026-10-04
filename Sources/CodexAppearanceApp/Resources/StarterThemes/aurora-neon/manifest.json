@@ -1,0 +1,8 @@
+{
+  "id": "aurora-neon",
+  "name": "Enchanted Forest · 奇幻森林",
+  "description": "月光森林、萤火柔光与深绿玻璃面板。",
+  "version": 2,
+  "palette": ["#071810", "#8FDCAD", "#E2C27E", "#8FAE7A"],
+  "requiredSelectors": ["[data-app-action-sidebar-thread-row]"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rainy-neon",
+  "name": "Rainy Neon",
+  "description": "Night-rain contrast with blue and pink glow.",
+  "version": 1,
+  "palette": ["#080B1D", "#6AE4FF", "#FF65C8", "#5B7CFF"],
+  "requiredSelectors": ["[data-app-action-sidebar-thread-row]"]
+}

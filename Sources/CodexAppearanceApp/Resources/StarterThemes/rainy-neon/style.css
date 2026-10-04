@@ -1,0 +1,1528 @@
+:root[data-codex-appearance-manager-theme="rainy-neon"] {
+  --cam-rain-cyan: #6ae4ff;
+  --cam-rain-pink: #ff65c8;
+  --cam-rain-indigo: #5b7cff;
+  --cam-rain-ink: #060a19;
+  --cam-rain-panel: rgba(5, 10, 27, 0.76);
+  --cam-rain-text: #eaf8ff;
+}
+
+/* Full-window rainy city: the image is an asset beside this stylesheet. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-frame] {
+  background:
+    linear-gradient(115deg, rgba(4, 10, 28, 0.76), rgba(7, 10, 28, 0.42) 52%, rgba(13, 5, 26, 0.68)),
+    radial-gradient(circle at 15% 78%, rgba(255, 61, 181, 0.24), transparent 35%),
+    url("__CAM_THEME_ASSET__/rainy-skyline-duel-v1.png") center / cover fixed !important;
+  color: var(--cam-rain-text);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] {
+  background:
+    linear-gradient(90deg, rgba(5, 10, 27, 0.42), rgba(5, 10, 27, 0.14) 40%, rgba(12, 7, 28, 0.3)),
+    url("__CAM_THEME_ASSET__/rainy-skyline-duel-v1.png") center / cover fixed !important;
+  color: var(--cam-rain-text);
+  border-left: 1px solid rgba(106, 228, 255, 0.32) !important;
+  box-shadow: inset 1px 0 rgba(255, 101, 200, 0.16);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #root main.bg-surface,
+:root[data-codex-appearance-manager-theme="rainy-neon"] #root webview.bg-surface {
+  background: transparent !important;
+}
+
+/* Codex's bottom fade normally uses the light surface token. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] [class*="from-surface"] {
+  background-image: linear-gradient(to top, rgba(5, 10, 27, 0.98), rgba(5, 10, 27, 0.78) 58%, transparent) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] header {
+  background: linear-gradient(90deg, rgba(5, 9, 24, 0.96), rgba(10, 10, 34, 0.88)) !important;
+  border-bottom-color: rgba(106, 228, 255, 0.26) !important;
+  box-shadow: 0 1px 0 rgba(255, 101, 200, 0.18);
+}
+
+/* Sidebar, rail, and icons. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar .sidebar-navigation {
+  background: transparent !important;
+  border-right: 1px solid rgba(106, 228, 255, 0.36);
+  backdrop-filter: none;
+  box-shadow: inset -1px 0 rgba(255, 101, 200, 0.22), 12px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] nav[class*="sidebar-rail"] svg,
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar svg,
+:root[data-codex-appearance-manager-theme="rainy-neon"] header svg {
+  color: var(--cam-rain-cyan);
+  stroke: currentColor;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button:hover svg,
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar [data-state="active"] svg {
+  color: var(--cam-rain-pink) !important;
+  filter: drop-shadow(0 0 5px rgba(255, 101, 200, 0.7));
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-action-sidebar-thread-row],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-action-sidebar-project-row] {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #bcefff !important;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-action-sidebar-thread-row]:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-action-sidebar-project-row]:hover {
+  background: linear-gradient(90deg, rgba(70, 215, 255, 0.2), rgba(255, 101, 200, 0.14));
+  border-color: rgba(106, 228, 255, 0.62);
+  box-shadow: 0 0 14px rgba(106, 228, 255, 0.18), inset 0 0 14px rgba(255, 101, 200, 0.08);
+  transform: translateX(2px);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-action-sidebar-thread-selected="true"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-action-sidebar-thread-active="true"] {
+  background: linear-gradient(90deg, rgba(106, 228, 255, 0.24), rgba(255, 101, 200, 0.2)) !important;
+  border-color: rgba(255, 101, 200, 0.8) !important;
+  box-shadow: 0 0 16px rgba(255, 101, 200, 0.34), inset 0 0 12px rgba(106, 228, 255, 0.12);
+}
+
+/* Conversations become glass panels above the rainy street. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-turn-key] > div {
+  margin-block: 8px;
+  border: 1px solid rgba(255, 101, 200, 0.52);
+  border-radius: 14px;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-user-message-bubble] {
+  background: linear-gradient(135deg, rgba(24, 94, 129, 0.72), rgba(18, 35, 84, 0.64)) !important;
+  border: 1px solid rgba(106, 228, 255, 0.88);
+  box-shadow: 0 0 18px rgba(106, 228, 255, 0.26);
+  color: #effdff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] pre,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] .bg-surface {
+  background: linear-gradient(135deg, rgba(4, 12, 29, 0.94), rgba(16, 9, 35, 0.88)) !important;
+  border-color: rgba(106, 228, 255, 0.48) !important;
+  box-shadow: inset 0 0 18px rgba(106, 228, 255, 0.05), 0 0 14px rgba(255, 101, 200, 0.1);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] pre {
+  border: 1px solid rgba(106, 228, 255, 0.58);
+  border-radius: 12px;
+}
+
+/* Composer is deliberately brighter than the surrounding glass. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-layout][data-composer-surface-variant] {
+  background: linear-gradient(135deg, rgba(4, 13, 32, 0.96), rgba(19, 8, 40, 0.93)) !important;
+  border: 1px solid rgba(106, 228, 255, 0.9);
+  box-shadow: 0 0 0 2px rgba(255, 101, 200, 0.34), 0 0 26px rgba(106, 228, 255, 0.34), inset 0 0 24px rgba(255, 101, 200, 0.08);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] .text-default,
+:root[data-codex-appearance-manager-theme="rainy-neon"] .text-secondary,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] {
+  color: var(--cam-rain-text) !important;
+}
+
+/* Typography: Codex retains several dark text tokens, so the neon theme owns the readable text layer. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface],
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar,
+:root[data-codex-appearance-manager-theme="rainy-neon"] header {
+  font-family: "SF Pro Display", "PingFang SC", "Hiragino Sans GB", system-ui, sans-serif;
+  font-synthesis: none;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] :is(p, span, li, label, button, h1, h2, h3, h4, small),
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar :is(p, span, li, label, button, h1, h2, h3, h4, small),
+:root[data-codex-appearance-manager-theme="rainy-neon"] header :is(p, span, li, label, button, h1, h2, h3, h4, small) {
+  color: #eaf8ff !important;
+  letter-spacing: 0.008em;
+  text-shadow: 0 0 7px rgba(106, 228, 255, 0.16);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] :is(h1, h2, h3, strong),
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar :is(h1, h2, h3, strong) {
+  color: #f7fbff !important;
+  text-shadow: 0 0 10px rgba(255, 101, 200, 0.34), 0 0 4px rgba(106, 228, 255, 0.26);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] :is(.text-tertiary, .text-muted, [data-markdown-text-tone]),
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar :is(.text-tertiary, .text-muted) {
+  color: #a9cedd !important;
+  text-shadow: none;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] a,
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar a {
+  color: #7cecff !important;
+  text-shadow: 0 0 8px rgba(106, 228, 255, 0.3);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-layout] :is(textarea, input, [contenteditable="true"]) {
+  color: #f7fbff !important;
+  -webkit-text-fill-color: #f7fbff;
+  caret-color: #6ae4ff;
+  text-shadow: 0 0 7px rgba(106, 228, 255, 0.2);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-layout] :is(textarea, input, [contenteditable="true"])::placeholder {
+  color: #a8cad9 !important;
+  -webkit-text-fill-color: #a8cad9;
+  opacity: 1;
+}
+
+/* Keep secondary UI blocks present but understated; reserve strong neon for code and the composer. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-turn-key] > div {
+  border-color: rgba(255, 101, 200, 0.28);
+  background: transparent !important;
+  box-shadow: none;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] .bg-surface {
+  background: rgba(6, 12, 28, 0.64) !important;
+  border-color: rgba(106, 228, 255, 0.2) !important;
+  box-shadow: none !important;
+}
+
+/* Edited-file result cards: a distinct blue neon surface, not a pale resource sheet. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="resource-card-max-width"]:has([class*="turn-diff-header"]) {
+  background: linear-gradient(118deg, rgba(5, 27, 59, 0.94), rgba(8, 61, 104, 0.78) 58%, rgba(12, 29, 72, 0.9)) !important;
+  border: 1px solid rgba(81, 220, 255, 0.72) !important;
+  box-shadow: 0 0 18px rgba(49, 198, 255, 0.28), inset 0 0 24px rgba(79, 167, 255, 0.12) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [class*="turn-diff-header"] {
+  border-bottom: 1px solid rgba(81, 220, 255, 0.22);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [class*="turn-diff-header"] + * {
+  background: linear-gradient(90deg, rgba(7, 32, 70, 0.42), rgba(12, 70, 111, 0.18));
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="resource-card-max-width"]:has([class*="turn-diff-header"]) button[class*="bg-surface/70"] {
+  background: linear-gradient(90deg, rgba(5, 28, 60, 0.9), rgba(8, 50, 88, 0.76)) !important;
+  border-top: 1px solid rgba(81, 220, 255, 0.16);
+  color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="resource-card-max-width"]:has([class*="turn-diff-header"]) button[class*="bg-surface/70"]:hover {
+  background: linear-gradient(90deg, rgba(10, 68, 112, 0.95), rgba(15, 101, 150, 0.8)) !important;
+  box-shadow: inset 3px 0 #6ae4ff, inset 0 0 16px rgba(106, 228, 255, 0.14);
+}
+
+/* Conversation voices: user = neon yellow, assistant = neon pink. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-user-message-bubble] :is(p, span, li, strong, a) {
+  color: #fff36d !important;
+  text-shadow: 0 0 8px rgba(255, 243, 109, 0.48), 0 0 16px rgba(255, 204, 41, 0.18);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-markdown-text-style="assistant-message"] :is(p, span, li, strong, a) {
+  color: #ff9edb !important;
+  text-shadow: 0 0 8px rgba(255, 101, 200, 0.4), 0 0 16px rgba(255, 101, 200, 0.14);
+}
+
+/* Diff-header controls inherit the same neon language as the card. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [class*="turn-diff-header"] span[class*="bg-surface-secondary/92"] {
+  background: linear-gradient(135deg, rgba(7, 38, 76, 0.96), rgba(11, 75, 116, 0.82)) !important;
+  border: 1px solid rgba(106, 228, 255, 0.72);
+  box-shadow: 0 0 12px rgba(49, 198, 255, 0.24), inset 0 0 10px rgba(106, 228, 255, 0.12);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [class*="turn-diff-header"] span[class*="bg-surface-secondary/92"] svg {
+  color: #a8f2ff !important;
+  stroke: currentColor;
+  filter: drop-shadow(0 0 4px rgba(106, 228, 255, 0.5));
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [class*="turn-diff-header"] div.pointer-events-auto > button {
+  color: #9cf0ff !important;
+  text-shadow: 0 0 7px rgba(106, 228, 255, 0.36);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [class*="turn-diff-header"] div.pointer-events-auto > button:last-child {
+  background: linear-gradient(135deg, rgba(45, 14, 75, 0.92), rgba(106, 32, 105, 0.78)) !important;
+  border: 1px solid rgba(255, 101, 200, 0.72) !important;
+  box-shadow: 0 0 12px rgba(255, 101, 200, 0.24), inset 0 0 9px rgba(106, 228, 255, 0.08);
+  color: #ffe2f4 !important;
+}
+
+/* Live activity stays legible while Codex is thinking or running a command. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="activity-header"]:has([class*="_cadencedShimmer_"]) {
+  padding: 3px 8px;
+  border: 1px solid rgba(106, 228, 255, 0.5);
+  border-radius: 8px;
+  background: linear-gradient(100deg, rgba(8, 36, 76, 0.86), rgba(27, 48, 111, 0.68)) !important;
+  box-shadow: 0 0 12px rgba(49, 198, 255, 0.2), inset 0 0 10px rgba(106, 228, 255, 0.08);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="activity-header"] [class*="_cadencedShimmer"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="activity-header"] [class*="_cadencedShimmer"] * {
+  color: #7cecff !important;
+  -webkit-text-fill-color: #7cecff !important;
+  text-shadow: 0 0 7px rgba(106, 228, 255, 0.52);
+}
+
+/* File-change cues emitted during a running turn use a compact blue-violet neon pill. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div:has(> [data-agent-activity-file-link]),
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] [data-agent-activity-file-link] {
+  border: 1px solid rgba(132, 122, 255, 0.72) !important;
+  border-radius: 10px;
+  background: linear-gradient(112deg, rgba(27, 48, 111, 0.92), rgba(64, 26, 110, 0.84)) !important;
+  box-shadow: 0 0 12px rgba(116, 105, 255, 0.26), inset 0 0 10px rgba(106, 228, 255, 0.08);
+  color: #dff8ff !important;
+  text-shadow: 0 0 6px rgba(106, 228, 255, 0.3);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] [data-agent-activity-file-link] :is(span, svg),
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] [data-agent-activity-file-link] {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] [data-agent-activity-file-link]:hover {
+  border-color: rgba(106, 228, 255, 0.9) !important;
+  background: linear-gradient(112deg, rgba(16, 82, 133, 0.96), rgba(84, 35, 130, 0.9)) !important;
+  box-shadow: 0 0 16px rgba(106, 228, 255, 0.38), inset 0 0 12px rgba(255, 101, 200, 0.12);
+}
+
+/* Completed command summaries use the same readable activity language, at a quieter intensity. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="activity-header"] {
+  margin-block: 2px;
+  padding: 3px 8px;
+  border: 1px solid rgba(106, 228, 255, 0.2);
+  border-left: 2px solid rgba(106, 228, 255, 0.66);
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(4, 24, 55, 0.78), rgba(13, 39, 79, 0.36)) !important;
+  box-shadow: inset 0 0 10px rgba(106, 228, 255, 0.045);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-main-surface] div[class*="activity-header"] :is([class*="_summary_"], [class*="text-text/40"], [class*="text-text/60"], [class*="text-text-tertiary"], .font-sans) {
+  color: #b7eaff !important;
+  -webkit-text-fill-color: #b7eaff !important;
+  text-shadow: 0 0 6px rgba(106, 228, 255, 0.3);
+}
+
+/* The transient file-change pill is rendered above the composer, outside the activity list. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content="true"] div[class*="bg-background-primary-soft/70"] {
+  border-color: rgba(106, 228, 255, 0.82) !important;
+  background: linear-gradient(112deg, rgba(9, 42, 87, 0.96), rgba(66, 26, 110, 0.9)) !important;
+  box-shadow: 0 0 16px rgba(49, 198, 255, 0.3), inset 0 0 12px rgba(255, 101, 200, 0.12);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content="true"] div[class*="bg-background-primary-soft/70"] :is(button, span) {
+  color: #e2faff !important;
+  -webkit-text-fill-color: #e2faff !important;
+  text-shadow: 0 0 6px rgba(106, 228, 255, 0.34);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content="true"] div[class*="bg-background-primary-soft/70"] [class*="text-codex-git-added"] {
+  color: #78ffd5 !important;
+  -webkit-text-fill-color: #78ffd5 !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content="true"] div[class*="bg-background-primary-soft/70"] [class*="text-codex-git-deleted"] {
+  color: #ff9edb !important;
+  -webkit-text-fill-color: #ff9edb !important;
+}
+
+/* Settings is a separate surface from the chat route, so it receives its own neon glass layer. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] main:has(input[placeholder*="搜索"]) {
+  background:
+    radial-gradient(circle at 84% 12%, rgba(106, 228, 255, 0.14), transparent 28%),
+    radial-gradient(circle at 20% 86%, rgba(255, 101, 200, 0.14), transparent 32%),
+    rgba(4, 10, 28, 0.96) !important;
+  color: #d8f6ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] main:has(input[placeholder*="搜索"]) :is(aside, nav) {
+  background: linear-gradient(180deg, rgba(5, 12, 32, 0.98), rgba(10, 9, 36, 0.9)) !important;
+  border-color: rgba(106, 228, 255, 0.34) !important;
+  box-shadow: inset -1px 0 rgba(255, 101, 200, 0.2);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] main:has(input[placeholder*="搜索"]) :is(h1, h2, h3, h4, p, span, label, small, button) {
+  color: #d8f6ff !important;
+  -webkit-text-fill-color: #d8f6ff !important;
+  text-shadow: 0 0 6px rgba(106, 228, 255, 0.16);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] main:has(input[placeholder*="搜索"]) :is(input, textarea, select) {
+  border-color: rgba(106, 228, 255, 0.58) !important;
+  background: rgba(5, 21, 48, 0.86) !important;
+  color: #f3fcff !important;
+  -webkit-text-fill-color: #f3fcff !important;
+  box-shadow: inset 0 0 10px rgba(106, 228, 255, 0.06);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] main:has(input[placeholder*="搜索"]) :is(input, textarea)::placeholder {
+  color: #82b9cf !important;
+  -webkit-text-fill-color: #82b9cf !important;
+  opacity: 1;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] main:has(input[placeholder*="搜索"]) :is(section, article, [class*="rounded-xl"], [class*="rounded-2xl"]) {
+  border-color: rgba(106, 228, 255, 0.28) !important;
+  background-color: rgba(7, 20, 46, 0.72) !important;
+  box-shadow: inset 0 0 18px rgba(106, 228, 255, 0.035);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] main:has(input[placeholder*="搜索"]) :is([role="tab"][aria-selected="true"], [role="switch"][aria-checked="true"], [data-state="active"], [aria-current="page"]) {
+  border-color: rgba(255, 101, 200, 0.72) !important;
+  background: linear-gradient(90deg, rgba(56, 21, 92, 0.88), rgba(13, 77, 117, 0.78)) !important;
+  box-shadow: 0 0 13px rgba(255, 101, 200, 0.22), inset 0 0 10px rgba(106, 228, 255, 0.1);
+}
+
+/* The profile menu is a portal: attach only while the profile trigger is open. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label="打开个人资料菜单"][aria-expanded="true"]) [role="menu"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label="Open profile menu"][aria-expanded="true"]) [role="menu"] {
+  border: 1px solid rgba(106, 228, 255, 0.68) !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, rgba(7, 23, 54, 0.98), rgba(45, 15, 70, 0.94)) !important;
+  box-shadow: 0 0 22px rgba(49, 198, 255, 0.26), 0 0 30px rgba(255, 101, 200, 0.16), inset 0 0 18px rgba(106, 228, 255, 0.06);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label="打开个人资料菜单"][aria-expanded="true"]) [role="menuitem"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label="Open profile menu"][aria-expanded="true"]) [role="menuitem"] {
+  color: #d8f6ff !important;
+  -webkit-text-fill-color: #d8f6ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label="打开个人资料菜单"][aria-expanded="true"]) [role="menuitem"]:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label="Open profile menu"][aria-expanded="true"]) [role="menuitem"]:hover {
+  background: linear-gradient(90deg, rgba(106, 228, 255, 0.16), rgba(255, 101, 200, 0.16)) !important;
+  color: #f7fbff !important;
+}
+
+/* Codex settings resolves its surfaces from application tokens instead of local utility classes. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] {
+  --app-color-background-surface: #07152e;
+  --app-color-background-surface-under: #030a1d;
+  --app-color-background-application-menu: #07152e;
+  --app-color-background-elevated-primary: rgba(8, 25, 56, 0.97);
+  --app-color-background-elevated-primary-opaque: #081938;
+  --app-color-background-elevated-secondary: rgba(14, 21, 57, 0.96);
+  --app-color-background-elevated-secondary-opaque: #0e1539;
+  --app-color-background-control: rgba(8, 26, 58, 0.94);
+  --app-color-background-button-secondary: rgba(106, 228, 255, 0.1);
+  --app-color-background-button-secondary-hover: rgba(106, 228, 255, 0.2);
+  --app-color-background-button-primary: #133c62;
+  --app-color-background-button-primary-hover: #195478;
+  --app-color-background-button-primary-active: #0e3156;
+  --app-color-text-foreground: #d8f6ff;
+  --app-color-text-foreground-secondary: #b7eaff;
+  --app-color-text-foreground-tertiary: #82b9cf;
+  --app-color-text-button-primary: #f4fcff;
+  --app-color-text-button-secondary: #d8f6ff;
+  --app-color-border: rgba(106, 228, 255, 0.28);
+  --app-color-border-heavy: rgba(106, 228, 255, 0.46);
+  --app-color-border-light: rgba(106, 228, 255, 0.16);
+  --codex-base-surface: #07152e;
+  --chat-background-color: #07152e;
+  --color-background-panel: #081938;
+  --color-background-primary-soft: rgba(8, 25, 56, 0.94);
+  --color-background-primary-soft-alpha: rgba(12, 31, 68, 0.88);
+  --color-background-primary-soft-active: rgba(106, 228, 255, 0.18);
+  --color-background-primary-soft-hover: rgba(106, 228, 255, 0.14);
+  --color-background-secondary-soft: rgba(15, 31, 66, 0.76);
+  --color-background-secondary-soft-alpha: rgba(16, 39, 78, 0.7);
+  --color-background-mode-toggle-track: #07152e;
+  --color-background-mode-toggle-selected: #12395d;
+  --color-background-segmented-form-track: #061126;
+  --color-background-segmented-form-selected: #12395d;
+  --color-background-disabled: rgba(134, 178, 198, 0.18);
+  --color-border: rgba(106, 228, 255, 0.28);
+  --color-border-strong: rgba(106, 228, 255, 0.48);
+  --color-border-subtle: rgba(106, 228, 255, 0.16);
+  --color-border-primary-outline: rgba(106, 228, 255, 0.46);
+  --color-border-secondary-outline: rgba(106, 228, 255, 0.34);
+  --color-text-foreground: #d8f6ff;
+  --color-text-foreground-secondary: #b7eaff;
+  --color-text-foreground-tertiary: #82b9cf;
+  --color-background-composer-primary: #123d60;
+  --color-text-composer-primary: #e9fbff;
+}
+
+/* The circular send/stop/voice control is semantically a composer action, not a general primary button. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] button.bg-composer-primary,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="停止"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="发送"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="开始语音会话"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="Stop"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="Send"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="Start voice conversation"] {
+  border: 1px solid rgba(106, 228, 255, 0.8) !important;
+  background: radial-gradient(circle at 35% 28%, #1f7194 0%, #123d60 52%, #0a1d42 100%) !important;
+  color: #e9fbff !important;
+  box-shadow: 0 0 10px rgba(106, 228, 255, 0.35), inset 0 0 8px rgba(186, 245, 255, 0.16) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] button.bg-composer-primary:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="停止"]:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="发送"]:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="开始语音会话"]:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="Stop"]:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="Send"]:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button[aria-label="Start voice conversation"]:hover {
+  border-color: #ff8bd6 !important;
+  background: radial-gradient(circle at 35% 28%, #2b7598 0%, #174b70 48%, #151244 100%) !important;
+  box-shadow: 0 0 13px rgba(106, 228, 255, 0.5), 0 0 14px rgba(255, 101, 200, 0.18) !important;
+}
+
+/* Secondary composer controls share the same blue-glass language while the action button remains brighter. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-footer-responsive] button:not(.bg-composer-primary) {
+  border: 1px solid rgba(106, 228, 255, 0.38) !important;
+  background: linear-gradient(135deg, rgba(20, 78, 111, 0.68), rgba(8, 27, 61, 0.82)) !important;
+  color: #d8f6ff !important;
+  box-shadow: inset 0 0 8px rgba(106, 228, 255, 0.09), 0 0 7px rgba(106, 228, 255, 0.16) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-footer-responsive] button:not(.bg-composer-primary):hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-footer-responsive] button:not(.bg-composer-primary)[data-state="open"] {
+  border-color: rgba(106, 228, 255, 0.82) !important;
+  background: linear-gradient(135deg, rgba(36, 111, 143, 0.9), rgba(16, 58, 94, 0.94)) !important;
+  color: #f1fcff !important;
+  box-shadow: 0 0 10px rgba(106, 228, 255, 0.36), inset 0 0 9px rgba(186, 245, 255, 0.1) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-footer-responsive] button:not(.bg-composer-primary) :is(svg, span),
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-body] [data-codex-composer] {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-body] [data-codex-composer] {
+  color: #e9fbff !important;
+  text-shadow: 0 0 8px rgba(106, 228, 255, 0.18);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-body] [data-codex-composer] p.placeholder {
+  color: #9bdbed !important;
+  -webkit-text-fill-color: #9bdbed !important;
+  opacity: 1 !important;
+}
+
+/* Every navigation and composer menu is rendered in a portal above the app surface. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="menu"][data-radix-menu-content] {
+  border: 1px solid rgba(106, 228, 255, 0.68) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg, rgba(6, 23, 54, 0.985), rgba(21, 12, 62, 0.97)) !important;
+  color: #d8f6ff !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  box-shadow: 0 0 20px rgba(49, 198, 255, 0.27), 0 0 25px rgba(255, 101, 200, 0.16), inset 0 0 16px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="menu"][data-radix-menu-content] :is(span, p, button, svg) {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="menu"][data-radix-menu-content] [role="menuitem"] {
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  color: #c8efff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="menu"][data-radix-menu-content] [role="menuitem"]:is(:hover, [data-highlighted], [data-state="checked"], [aria-checked="true"]) {
+  border-color: rgba(106, 228, 255, 0.62) !important;
+  background: linear-gradient(90deg, rgba(31, 113, 148, 0.58), rgba(73, 25, 109, 0.5)) !important;
+  color: #f2fcff !important;
+  box-shadow: inset 3px 0 0 #6ae4ff, 0 0 11px rgba(106, 228, 255, 0.2) !important;
+}
+
+/* Sidebar and toolbar hover labels share the overlay palette without altering the underlying icon buttons. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"] {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  border-radius: 11px !important;
+  background: linear-gradient(135deg, rgba(6, 24, 55, 0.98), rgba(38, 13, 69, 0.96)) !important;
+  color: #ddf7ff !important;
+  -webkit-text-fill-color: #ddf7ff !important;
+  backdrop-filter: blur(14px) saturate(135%) !important;
+  box-shadow: 0 0 14px rgba(49, 198, 255, 0.3), 0 0 17px rgba(255, 101, 200, 0.14) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"] :is(span, p, svg) {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* The top-right tab switcher uses a hover-only tooltip rather than a menu. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label="显示标签页"]:hover) [role="tooltip"] {
+  border-color: #6ae4ff !important;
+  box-shadow: 0 0 17px rgba(49, 198, 255, 0.44), 0 0 20px rgba(255, 101, 200, 0.2) !important;
+}
+
+/* Explore and the tab switcher are Popover dialogs rather than menus. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][data-slot="popover-content"] {
+  border: 1px solid rgba(106, 228, 255, 0.7) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg, rgba(6, 23, 54, 0.985), rgba(25, 11, 65, 0.97)) !important;
+  color: #d8f6ff !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  box-shadow: 0 0 20px rgba(49, 198, 255, 0.28), 0 0 27px rgba(255, 101, 200, 0.17), inset 0 0 17px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][data-slot="popover-content"] :is(span, p, svg) {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][data-slot="popover-content"] :is([data-explore-row], [role="tab"], button) {
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  color: #c8efff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][data-slot="popover-content"] :is([data-explore-row], [role="tab"], button):is(:hover, :focus-within, [data-state="active"], [aria-selected="true"]) {
+  border-color: rgba(106, 228, 255, 0.62) !important;
+  background: linear-gradient(90deg, rgba(31, 113, 148, 0.58), rgba(73, 25, 109, 0.5)) !important;
+  color: #f2fcff !important;
+  box-shadow: inset 3px 0 0 #6ae4ff, 0 0 11px rgba(106, 228, 255, 0.2) !important;
+}
+
+/* The opened tab strip has its own selected-surface layer, independent from the tab button. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-tab-controller] [data-tab-id]:has(> [role="tab"][aria-selected="true"]) > div[class*="_SelectedSurface_"] {
+  border-color: rgba(106, 228, 255, 0.78) !important;
+  background: linear-gradient(135deg, rgba(25, 86, 121, 0.94), rgba(37, 18, 78, 0.96)) !important;
+  box-shadow: 0 0 12px rgba(106, 228, 255, 0.32), 0 0 14px rgba(255, 101, 200, 0.16), inset 0 0 10px rgba(190, 247, 255, 0.12) !important;
+}
+
+/* Some newer title-bar layouts detach the tab from its controller wrapper. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-tab-id]:has(> [role="tab"][aria-selected="true"]) > div[class*="_SelectedSurface_"] {
+  border-color: rgba(106, 228, 255, 0.78) !important;
+  background: linear-gradient(135deg, rgba(25, 86, 121, 0.94), rgba(37, 18, 78, 0.96)) !important;
+  box-shadow: 0 0 12px rgba(106, 228, 255, 0.32), 0 0 14px rgba(255, 101, 200, 0.16), inset 0 0 10px rgba(190, 247, 255, 0.12) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-tab-controller] [data-tab-id] > [role="tab"] {
+  color: #d8f6ff !important;
+  -webkit-text-fill-color: #d8f6ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-app-shell-tab-controller] [data-tab-id]:has(> [role="tab"][aria-selected="true"]) :is(button, span, svg) {
+  color: #d8f6ff !important;
+  -webkit-text-fill-color: #d8f6ff !important;
+}
+
+/* Primary solid actions power New task, New library item, and Add skill. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] {
+  --color-background-primary-solid: #123d60;
+  --color-text-primary-solid: #e9fbff;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] button.bg-primary-solid,
+:root[data-codex-appearance-manager-theme="rainy-neon"] a.bg-primary-solid,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="button"].bg-primary-solid {
+  border-color: rgba(106, 228, 255, 0.8) !important;
+  background: radial-gradient(circle at 35% 28%, #1f7194 0%, #123d60 52%, #0a1d42 100%) !important;
+  color: #e9fbff !important;
+  -webkit-text-fill-color: #e9fbff !important;
+  box-shadow: 0 0 10px rgba(106, 228, 255, 0.35), inset 0 0 8px rgba(186, 245, 255, 0.16) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] button.bg-primary-solid:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] a.bg-primary-solid:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="button"].bg-primary-solid:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] button.bg-primary-solid[data-state="open"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] a.bg-primary-solid[data-state="open"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="button"].bg-primary-solid[data-state="open"] {
+  border-color: #ff8bd6 !important;
+  background: radial-gradient(circle at 35% 28%, #2b7598 0%, #174b70 48%, #151244 100%) !important;
+  color: #f5fdff !important;
+  box-shadow: 0 0 13px rgba(106, 228, 255, 0.5), 0 0 14px rgba(255, 101, 200, 0.18) !important;
+}
+
+/* Image generation has its own home composer; keep it separate from the chat composer. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] {
+  --cam-image-composer-surface: linear-gradient(135deg, rgba(7, 26, 56, 0.97), rgba(17, 20, 67, 0.96) 58%, rgba(42, 15, 70, 0.94));
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:has([aria-label="描述要创建的图像"]) [data-composer-body] {
+  border: 1px solid rgba(106, 228, 255, 0.86) !important;
+  border-radius: 18px !important;
+  background: var(--cam-image-composer-surface) !important;
+  color: #edfaff !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  box-shadow: 0 0 0 1px rgba(255, 101, 200, 0.27), 0 0 20px rgba(106, 228, 255, 0.26), inset 0 0 22px rgba(92, 207, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:has([aria-label="描述要创建的图像"]) [aria-label="描述要创建的图像"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:has([aria-label="描述要创建的图像"]) [aria-label="描述要创建的图像"] [data-placeholder] {
+  color: #edfaff !important;
+  -webkit-text-fill-color: #edfaff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:has([aria-label="描述要创建的图像"]) [aria-label="描述要创建的图像"] [data-placeholder] {
+  color: rgba(216, 246, 255, 0.72) !important;
+  -webkit-text-fill-color: rgba(216, 246, 255, 0.72) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:has([aria-label="描述要创建的图像"]) :is(button[aria-label="添加文件等内容"], button[aria-label="选择 ChatGPT 模型"], button[aria-label="听写"]) {
+  border: 1px solid rgba(106, 228, 255, 0.54) !important;
+  background: linear-gradient(135deg, rgba(29, 91, 126, 0.9), rgba(27, 31, 83, 0.94)) !important;
+  color: #ddf8ff !important;
+  -webkit-text-fill-color: #ddf8ff !important;
+  box-shadow: 0 0 9px rgba(106, 228, 255, 0.18), inset 0 0 7px rgba(186, 245, 255, 0.11) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:has([aria-label="描述要创建的图像"]) button[aria-label="发送"] {
+  border: 1px solid rgba(106, 228, 255, 0.82) !important;
+  background: radial-gradient(circle at 35% 28%, #4aa8c9, #155278 58%, #101a51) !important;
+  color: #effcff !important;
+  -webkit-text-fill-color: #effcff !important;
+  opacity: 0.9 !important;
+  box-shadow: 0 0 11px rgba(106, 228, 255, 0.48), 0 0 12px rgba(255, 101, 200, 0.12) !important;
+}
+
+/* The utility-rail destinations and Your dot behave like slow, independent neon signs. */
+@keyframes cam-rail-neon-cycle {
+  0%, 100% {
+    color: #6ae4ff;
+    filter: drop-shadow(0 0 3px rgba(106, 228, 255, 0.66)) drop-shadow(0 0 8px rgba(106, 228, 255, 0.24));
+  }
+  28% {
+    color: #a98bff;
+    filter: drop-shadow(0 0 3px rgba(169, 139, 255, 0.68)) drop-shadow(0 0 9px rgba(169, 139, 255, 0.27));
+  }
+  56% {
+    color: #ff65c8;
+    filter: drop-shadow(0 0 3px rgba(255, 101, 200, 0.7)) drop-shadow(0 0 9px rgba(255, 101, 200, 0.26));
+  }
+  78% {
+    color: #ffd470;
+    filter: drop-shadow(0 0 3px rgba(255, 212, 112, 0.62)) drop-shadow(0 0 8px rgba(255, 212, 112, 0.2));
+  }
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar :is(button[data-sidebar-destination="builtin:home"], button[data-sidebar-destination="builtin:automations"], button[data-sidebar-destination="builtin:library"], button[data-sidebar-destination="builtin:images"], button[data-sidebar-destination="builtin:customize"], button[data-slot="popover-trigger"]) svg,
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-sidebar-destination="builtin:orbit"] img.icon-leading {
+  animation: cam-rail-neon-cycle 8.4s ease-in-out infinite !important;
+  transition: color 180ms ease, filter 180ms ease, transform 180ms ease !important;
+  will-change: color, filter;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-sidebar-destination="builtin:home"] svg {
+  animation-delay: -0.4s !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-sidebar-destination="builtin:automations"] svg {
+  animation-delay: -1.8s !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-sidebar-destination="builtin:library"] svg {
+  animation-delay: -3.2s !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-sidebar-destination="builtin:images"] svg {
+  animation-delay: -4.6s !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-sidebar-destination="builtin:customize"] svg {
+  animation-delay: -6s !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-sidebar-destination="builtin:orbit"] img.icon-leading {
+  animation-delay: -7.4s !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-slot="popover-trigger"] svg {
+  animation-delay: -7.4s !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar :is(button[data-sidebar-destination="builtin:home"], button[data-sidebar-destination="builtin:automations"], button[data-sidebar-destination="builtin:library"], button[data-sidebar-destination="builtin:images"], button[data-sidebar-destination="builtin:customize"], button[data-slot="popover-trigger"], button[data-sidebar-destination="builtin:orbit"]):hover :is(svg, img.icon-leading) {
+  animation-play-state: paused !important;
+  color: #f3fdff !important;
+  filter: drop-shadow(0 0 4px rgba(243, 253, 255, 0.88)) drop-shadow(0 0 12px rgba(106, 228, 255, 0.48)) !important;
+  transform: scale(1.08);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar button[data-selected] :is(svg, img.icon-leading) {
+  animation: none !important;
+  color: #79eaff !important;
+  filter: drop-shadow(0 0 4px rgba(121, 234, 255, 0.86)) drop-shadow(0 0 11px rgba(121, 234, 255, 0.38)) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-codex-appearance-manager-theme="rainy-neon"] #app-shell-sidebar :is(button[data-sidebar-destination="builtin:home"], button[data-sidebar-destination="builtin:automations"], button[data-sidebar-destination="builtin:library"], button[data-sidebar-destination="builtin:images"], button[data-sidebar-destination="builtin:customize"], button[data-slot="popover-trigger"], button[data-sidebar-destination="builtin:orbit"]) :is(svg, img.icon-leading) {
+    animation: none !important;
+    color: #6ae4ff !important;
+    filter: drop-shadow(0 0 5px rgba(106, 228, 255, 0.48)) !important;
+  }
+}
+
+/* Thread summary panels (project, branch, sources) are independent floating surfaces. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] {
+  border: 1px solid rgba(106, 228, 255, 0.74) !important;
+  border-radius: 16px !important;
+  background: linear-gradient(145deg, rgba(5, 20, 49, 0.97), rgba(14, 15, 57, 0.965) 58%, rgba(39, 12, 66, 0.95)) !important;
+  color: #dff8ff !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  box-shadow: 0 0 0 1px rgba(255, 101, 200, 0.22), 0 0 22px rgba(106, 228, 255, 0.28), 0 0 27px rgba(255, 101, 200, 0.14), inset 0 0 18px rgba(106, 228, 255, 0.07) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] header {
+  background: linear-gradient(90deg, rgba(16, 59, 91, 0.96), rgba(24, 18, 66, 0.94)) !important;
+  border-bottom: 1px solid rgba(106, 228, 255, 0.34) !important;
+  color: #eafaff !important;
+  text-shadow: 0 0 7px rgba(106, 228, 255, 0.28);
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] header::before,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] section:not(:last-child)::after {
+  background: rgba(106, 228, 255, 0.3) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] :is(span, p, button, svg) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] [data-slot="thread-summary-panel-item"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] button[data-slot="thread-summary-panel-item-button"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] button[data-slot="thread-summary-panel-item-trigger"] {
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  color: #c9efff !important;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] :is([data-slot="thread-summary-panel-item"], button[data-slot="thread-summary-panel-item-button"], button[data-slot="thread-summary-panel-item-trigger"]):hover {
+  border-color: rgba(106, 228, 255, 0.58) !important;
+  background: linear-gradient(90deg, rgba(28, 106, 142, 0.56), rgba(72, 22, 106, 0.46)) !important;
+  color: #f3fdff !important;
+  box-shadow: inset 3px 0 0 #6ae4ff, 0 0 10px rgba(106, 228, 255, 0.18) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] button[data-slot="thread-summary-panel-icon-button"] {
+  border: 1px solid rgba(106, 228, 255, 0.38) !important;
+  background: rgba(14, 49, 79, 0.72) !important;
+  color: #8eeaff !important;
+  box-shadow: inset 0 0 7px rgba(106, 228, 255, 0.1) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-summary-panel-variant] button[data-slot="thread-summary-panel-icon-button"]:hover {
+  border-color: #ff8bd6 !important;
+  background: linear-gradient(135deg, rgba(26, 105, 139, 0.88), rgba(76, 23, 109, 0.84)) !important;
+  color: #f8fdff !important;
+  box-shadow: 0 0 10px rgba(106, 228, 255, 0.28), 0 0 11px rgba(255, 101, 200, 0.2) !important;
+}
+
+/* Project create/edit/remove dialogs and sidebar history hover cards. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] :is([role="dialog"], [role="alertdialog"]):not([data-slot="popover-content"]) {
+  border: 1px solid rgba(106, 228, 255, 0.78) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(145deg, rgba(5, 20, 49, 0.98), rgba(16, 14, 59, 0.97) 58%, rgba(42, 13, 69, 0.95)) !important;
+  color: #e5faff !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  box-shadow: 0 0 0 1px rgba(255, 101, 200, 0.25), 0 0 26px rgba(106, 228, 255, 0.3), 0 0 30px rgba(255, 101, 200, 0.15) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] :is([role="dialog"], [role="alertdialog"]):not([data-slot="popover-content"]) :is(input, textarea, [role="textbox"], [data-slot="input"]) {
+  border-color: rgba(106, 228, 255, 0.66) !important;
+  background: rgba(8, 31, 68, 0.86) !important;
+  color: #e9fbff !important;
+  -webkit-text-fill-color: #e9fbff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] :is([data-slot="hover-card-content"], [data-radix-hover-card-content]) {
+  border: 1px solid rgba(106, 228, 255, 0.7) !important;
+  border-radius: 13px !important;
+  background: linear-gradient(135deg, rgba(5, 21, 50, 0.98), rgba(30, 13, 67, 0.96)) !important;
+  color: #dff8ff !important;
+  backdrop-filter: blur(16px) saturate(130%) !important;
+  box-shadow: 0 0 18px rgba(106, 228, 255, 0.28), 0 0 20px rgba(255, 101, 200, 0.14) !important;
+}
+
+/* Execution approvals use their own surface instead of a dialog role. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-approval-surface] {
+  border: 1px solid rgba(106, 228, 255, 0.8) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(145deg, rgba(5, 22, 54, 0.985), rgba(12, 42, 83, 0.97) 56%, rgba(48, 13, 76, 0.96)) !important;
+  color: #e5faff !important;
+  backdrop-filter: blur(18px) saturate(140%) !important;
+  box-shadow: 0 0 0 1px rgba(255, 101, 200, 0.26), 0 0 26px rgba(106, 228, 255, 0.34), 0 0 30px rgba(255, 101, 200, 0.16), inset 0 0 18px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-approval-surface] [role="alert"] :is(h1, h2, h3, p, span, code, strong) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-approval-surface] form {
+  border-top: 1px solid rgba(106, 228, 255, 0.22) !important;
+}
+
+/* Diff-file hover previews are unstyled tooltips containing an elevated light panel. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"][class~="group/diff-preview"] {
+  background: transparent !important;
+  color: #dff8ff !important;
+  box-shadow: none !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"][class~="group/diff-preview"] > [class~="bg-surface-elevated-secondary"] {
+  border-color: rgba(106, 228, 255, 0.78) !important;
+  background: linear-gradient(145deg, rgba(5, 22, 54, 0.985), rgba(12, 39, 80, 0.97) 58%, rgba(43, 13, 72, 0.96)) !important;
+  color: #e6fbff !important;
+  box-shadow: 0 0 0 1px rgba(255, 101, 200, 0.24), 0 0 28px rgba(106, 228, 255, 0.32), 0 0 24px rgba(255, 101, 200, 0.14), inset 0 0 18px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"][class~="group/diff-preview"] [data-testid="diff-preview-scroll"] {
+  background: rgba(7, 27, 62, 0.97) !important;
+  color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"][class~="group/diff-preview"] [data-testid="diff-preview-scroll"] :is(pre, code, span) {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"][class~="group/diff-preview"] .composer-diff-simple-line {
+  color-scheme: dark !important;
+  --color-surface: rgba(7, 27, 62, 0.97) !important;
+  --color-surface-secondary: rgba(9, 35, 76, 0.98) !important;
+  --color-codex-diff-surface: rgba(7, 27, 62, 0.97) !important;
+  --color-text: #dff8ff !important;
+  --color-text-info: #79dcff !important;
+  --diffs-light-bg: rgba(7, 27, 62, 0.97) !important;
+  --diffs-dark-bg: rgba(7, 27, 62, 0.97) !important;
+  --diffs-bg: rgba(7, 27, 62, 0.97) !important;
+  --diffs-bg-addition: rgba(16, 100, 113, 0.58) !important;
+  --diffs-bg-deletion: rgba(106, 24, 87, 0.58) !important;
+  --diffs-bg-separator: rgba(13, 54, 93, 0.94) !important;
+  --diffs-addition-base: #33dfce !important;
+  --diffs-deletion-base: #ff7cc8 !important;
+  --diffs-mixer: #6ae4ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="tooltip"][class~="group/diff-preview"] [class~="border-b"][class~="bg-surface-elevated-secondary"] {
+  border-color: rgba(106, 228, 255, 0.35) !important;
+  background: rgba(13, 54, 93, 0.88) !important;
+  color: #dff8ff !important;
+}
+
+/* Hovering the current-thread marker rail shows a conversation preview, not a sidebar tooltip. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label^="跳转到用户消息"]:hover) [role="tooltip"] {
+  border-left-color: #6ae4ff !important;
+  border-right-color: #ff8bd6 !important;
+  padding: 14px 16px !important;
+  background: linear-gradient(135deg, rgba(4, 23, 55, 0.985), rgba(12, 35, 76, 0.97) 52%, rgba(47, 13, 72, 0.97)) !important;
+  color: #eaf8ff !important;
+  line-height: 1.55 !important;
+  box-shadow: inset 0 0 16px rgba(106, 228, 255, 0.09), 0 0 20px rgba(106, 228, 255, 0.34), 0 0 24px rgba(255, 101, 200, 0.18) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label^="跳转到用户消息"]:hover) [role="tooltip"] :is(button, div, span, p) {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* The actual transcript preview is a nested elevated-surface utility, which otherwise stays cream. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label^="跳转到用户消息"]:hover) [role="tooltip"] [class*="bg-surface-elevated-secondary"] {
+  border: 1px solid rgba(106, 228, 255, 0.64) !important;
+  background: rgba(7, 25, 58, 0.94) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: #dff8ff !important;
+  box-shadow: inset 0 0 18px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] body:has(button[aria-label^="跳转到用户消息"]:hover) [role="tooltip"] [class*="_preview_"] :is(p, span, code) {
+  color: #b9eaff !important;
+  -webkit-text-fill-color: #b9eaff !important;
+}
+
+/* Code-review comments are resource cards, with their own elevated light surface. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] .mb-3 > div[class*="bg-surface-elevated-secondary/50"][class*="extension:bg-background-primary-soft/50"] {
+  border: 1px solid rgba(106, 228, 255, 0.68) !important;
+  background: linear-gradient(135deg, rgba(6, 25, 56, 0.96), rgba(15, 35, 78, 0.94) 56%, rgba(51, 14, 77, 0.93)) !important;
+  color: #e3f9ff !important;
+  box-shadow: inset 0 0 16px rgba(106, 228, 255, 0.08), 0 0 15px rgba(106, 228, 255, 0.18), 0 0 18px rgba(255, 101, 200, 0.11) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] .mb-3 > div[class*="bg-surface-elevated-secondary/50"] [class*="bg-surface-secondary/92"] {
+  border: 1px solid rgba(106, 228, 255, 0.55) !important;
+  background: rgba(10, 47, 83, 0.9) !important;
+  color: #83edff !important;
+  box-shadow: inset 0 0 10px rgba(106, 228, 255, 0.1) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] .mb-3 > div[class*="bg-surface-elevated-secondary/50"] :is([class*="border-t"], button) {
+  border-color: rgba(106, 228, 255, 0.32) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] .mb-3 > div[class*="bg-surface-elevated-secondary/50"] :is(span, button, svg) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] .mb-3 > div[class*="bg-surface-elevated-secondary/50"] button:hover {
+  background: linear-gradient(90deg, rgba(31, 109, 146, 0.5), rgba(83, 24, 108, 0.42)) !important;
+  color: #ffffff !important;
+}
+
+/* Transcript document links use the same light resource surface, but live outside code-review cards. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"][class*="extension:bg-background-primary-soft/50"]:has(.end-resource-open-button) {
+  border: 1px solid rgba(106, 228, 255, 0.68) !important;
+  background: linear-gradient(135deg, rgba(5, 25, 56, 0.96), rgba(11, 47, 86, 0.93) 58%, rgba(48, 14, 76, 0.92)) !important;
+  color: #dff8ff !important;
+  box-shadow: inset 0 0 16px rgba(106, 228, 255, 0.08), 0 0 15px rgba(106, 228, 255, 0.18), 0 0 18px rgba(255, 101, 200, 0.11) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) .group\/resource-card [class*="bg-surface-secondary/92"] {
+  border: 1px solid rgba(106, 228, 255, 0.55) !important;
+  background: rgba(7, 37, 76, 0.92) !important;
+  color: #83edff !important;
+  box-shadow: inset 0 0 10px rgba(106, 228, 255, 0.1) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) :is(.group\/resource-card span, .end-resource-open-button, .end-resource-open-button svg) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) .end-resource-open-button {
+  border-color: rgba(106, 228, 255, 0.5) !important;
+  background: rgba(7, 37, 76, 0.92) !important;
+  box-shadow: inset 0 0 10px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) .end-resource-open-button:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) .end-resource-open-button[data-state="open"] {
+  border-color: rgba(255, 139, 214, 0.78) !important;
+  background: linear-gradient(90deg, rgba(30, 104, 145, 0.84), rgba(76, 22, 108, 0.76)) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(106, 228, 255, 0.24), 0 0 11px rgba(255, 101, 200, 0.14) !important;
+}
+
+/* The native action carries Tailwind's important transparent utility in its utilities layer. */
+@layer utilities {
+  :root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) button.end-resource-open-button {
+    background-color: rgba(7, 37, 76, 0.92) !important;
+    background-image: none !important;
+  }
+
+  :root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) button.end-resource-open-button:hover,
+  :root[data-codex-appearance-manager-theme="rainy-neon"] div[class*="bg-surface-elevated-secondary/50"]:has(.end-resource-open-button) button.end-resource-open-button[data-state="open"] {
+    background-color: rgba(30, 104, 145, 0.84) !important;
+    background-image: linear-gradient(90deg, rgba(30, 104, 145, 0.84), rgba(76, 22, 108, 0.76)) !important;
+  }
+}
+
+/* The text-selection actions float independently of menus and popovers.
+   Codex has used elevated-secondary/90, bg-surface, and now elevated-secondary for this portal. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class*="bg-surface-elevated-secondary/90"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface-elevated-secondary"] {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  border-radius: 11px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class*="bg-surface-elevated-secondary/90"] > button,
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface"] > button,
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface-elevated-secondary"] > button {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class*="bg-surface-elevated-secondary/90"] > button:not(:last-child),
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface"] > button:not(:last-child),
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface-elevated-secondary"] > button:not(:last-child) {
+  border-right-color: rgba(106, 228, 255, 0.22) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface-elevated-secondary"] > div[aria-hidden="true"][class~="bg-border"] {
+  background: rgba(106, 228, 255, 0.22) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class*="bg-surface-elevated-secondary/90"] > button:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface"] > button:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] div.pointer-events-none.w-max.fixed.z-50 [role="presentation"][class~="bg-surface-elevated-secondary"] > button:hover {
+  background: linear-gradient(90deg, rgba(31, 113, 148, 0.56), rgba(82, 24, 110, 0.48)) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Markdown code blocks render their language/action strip outside of <pre>. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-markdown-copy="code-block"] > [data-markdown-copy="exclude"] {
+  border-bottom: 1px solid rgba(106, 228, 255, 0.38) !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: inset 0 -8px 16px rgba(106, 228, 255, 0.06) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-markdown-copy="code-block"] > [data-markdown-copy="exclude"] :is(span, button, svg) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-markdown-copy="code-block"] > [data-markdown-copy="exclude"] button:hover {
+  background: linear-gradient(90deg, rgba(31, 113, 148, 0.56), rgba(82, 24, 110, 0.48)) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* New language-labelled blocks carry their own light CodeSurface theme on the outer wrapper. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-markdown-copy="code-block"][data-theme="light"] {
+  border: 1px solid rgba(106, 228, 255, 0.58) !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.22), 0 0 19px rgba(255, 101, 200, 0.12), inset 0 0 12px rgba(106, 228, 255, 0.06) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-markdown-copy="code-block"][data-theme="light"] > :not([data-markdown-copy="exclude"]) {
+  background: transparent !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* ChatGPT's Chat and Work homes wrap their composer in a form, not the Codex composer root. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement]:has([data-composer-markdown]) {
+  border: 1px solid rgba(106, 228, 255, 0.9) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(4, 13, 32, 0.97), rgba(16, 32, 74, 0.94) 56%, rgba(37, 10, 61, 0.94)) !important;
+  color: #e9fbff !important;
+  box-shadow: 0 0 0 2px rgba(255, 101, 200, 0.3), 0 0 26px rgba(106, 228, 255, 0.3), inset 0 0 24px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement]:has([data-composer-markdown]) [data-composer-layout][data-composer-surface-variant],
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement]:has([data-composer-markdown]) [data-composer-body] {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement]:has([data-composer-markdown]) [data-composer-footer-responsive] {
+  border-top: 1px solid rgba(106, 228, 255, 0.24) !important;
+  background: rgba(5, 21, 49, 0.34) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement]:has([data-composer-markdown]) [data-composer-markdown] {
+  color: #e9fbff !important;
+  -webkit-text-fill-color: #e9fbff !important;
+  caret-color: #6ae4ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement]:has([data-composer-markdown]) [data-composer-markdown] p.placeholder,
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement]:has([data-composer-markdown]) [data-composer-markdown] [data-placeholder] {
+  color: #9bdbed !important;
+  -webkit-text-fill-color: #9bdbed !important;
+  opacity: 1 !important;
+}
+
+/* This selection toolbar is portal-mounted, so it needs its own ChatGPT treatment. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] :is([aria-label="文本格式"], [aria-label="Text formatting"], [aria-label="文字格式設定"]) {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] :is([aria-label="文本格式"], [aria-label="Text formatting"], [aria-label="文字格式設定"]) :is(button, svg, span) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] :is([aria-label="文本格式"], [aria-label="Text formatting"], [aria-label="文字格式設定"]) button:hover,
+:root[data-codex-appearance-manager-theme="rainy-neon"] :is([aria-label="文本格式"], [aria-label="Text formatting"], [aria-label="文字格式設定"]) button[aria-pressed="true"] {
+  background: linear-gradient(90deg, rgba(31, 113, 148, 0.56), rgba(82, 24, 110, 0.48)) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* The format dialog has a separate elevated-secondary inner surface. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][aria-label="文本格式"][data-slot="popover-content"] > [role="presentation"].bg-surface-elevated-secondary,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][aria-label="Text formatting"][data-slot="popover-content"] > [role="presentation"].bg-surface-elevated-secondary,
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][aria-label="文字格式設定"][data-slot="popover-content"] > [role="presentation"].bg-surface-elevated-secondary {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][aria-label="文本格式"][data-slot="popover-content"] > [role="presentation"] :is(button, svg, span),
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][aria-label="Text formatting"][data-slot="popover-content"] > [role="presentation"] :is(button, svg, span),
+:root[data-codex-appearance-manager-theme="rainy-neon"] [role="dialog"][aria-label="文字格式設定"][data-slot="popover-content"] > [role="presentation"] :is(button, svg, span) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Work home omits the markdown-editor marker; style the stable home surface itself. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:not(:has([aria-label="描述要创建的图像"])) {
+  border: 1px solid rgba(106, 228, 255, 0.9) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(4, 13, 32, 0.97), rgba(16, 32, 74, 0.94) 56%, rgba(37, 10, 61, 0.94)) !important;
+  color: #e9fbff !important;
+  box-shadow: 0 0 0 2px rgba(255, 101, 200, 0.3), 0 0 26px rgba(106, 228, 255, 0.3), inset 0 0 24px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:not(:has([aria-label="描述要创建的图像"])) :is([data-composer-layout][data-composer-surface-variant], [data-composer-body]) {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:not(:has([aria-label="描述要创建的图像"])) [data-composer-footer-responsive] {
+  border-top: 1px solid rgba(106, 228, 255, 0.24) !important;
+  background: rgba(5, 21, 49, 0.34) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:not(:has([aria-label="描述要创建的图像"])) :is(textarea, input, [contenteditable="true"]) {
+  color: #e9fbff !important;
+  -webkit-text-fill-color: #e9fbff !important;
+  caret-color: #6ae4ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-composer-placement="home"]:not(:has([aria-label="描述要创建的图像"])) :is(textarea, input, [contenteditable="true"])::placeholder {
+  color: #9bdbed !important;
+  -webkit-text-fill-color: #9bdbed !important;
+  opacity: 1 !important;
+}
+
+/* A new ChatGPT Work home has no form: its native body paints the cream surface. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-root][data-composer-placement="home"]:has([data-composer-input-variant="work-home"]) [data-composer-body] {
+  background: transparent !important;
+  color: #e9fbff !important;
+  box-shadow: none !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-root][data-composer-placement="home"]:has([data-composer-input-variant="work-home"]) [data-composer-footer-responsive] {
+  background: transparent !important;
+}
+
+/* Work keeps its project/plugin utility rail below the composer body. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-root][data-composer-placement="home"]:has([data-composer-input-variant="work-home"]) [data-composer-rail-item][data-composer-rail-placement="below"].bg-background-composer-action-bar {
+  border-top: 1px solid rgba(106, 228, 255, 0.3) !important;
+  background: linear-gradient(90deg, rgba(5, 21, 49, 0.9), rgba(16, 30, 68, 0.86) 62%, rgba(42, 13, 65, 0.84)) !important;
+  color: #c8f2ff !important;
+  box-shadow: inset 0 8px 18px rgba(106, 228, 255, 0.05) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-root][data-composer-placement="home"]:has([data-composer-input-variant="work-home"]) [data-composer-rail-item][data-composer-rail-placement="below"] :is(button, span, svg) {
+  color: #c8f2ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* A new Codex project opens its own home composer with a native cream body and project rail. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-root][data-composer-placement="home"]:has([data-composer-input-variant="default"]) [data-composer-body] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-root][data-composer-placement="home"]:has([data-composer-input-variant="default"]) [data-composer-rail-item][data-composer-rail-placement="above"].bg-background-composer-action-bar {
+  border-bottom: 1px solid rgba(106, 228, 255, 0.3) !important;
+  background: linear-gradient(90deg, rgba(5, 21, 49, 0.9), rgba(16, 30, 68, 0.86) 62%, rgba(42, 13, 65, 0.84)) !important;
+  color: #c8f2ff !important;
+  box-shadow: inset 0 -8px 18px rgba(106, 228, 255, 0.05) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-root][data-composer-placement="home"]:has([data-composer-input-variant="default"]) [data-composer-rail-item][data-composer-rail-placement="above"] :is(button, span, svg) {
+  color: #c8f2ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Archive and restore confirmations are Sonner toasts with their own inner alert surface. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="top"][data-x-position="center"] .alert-root.bg-surface-elevated-secondary {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="top"][data-x-position="center"] .alert-root :is(svg, span, div) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="top"][data-x-position="center"] .alert-root button {
+  border-color: rgba(106, 228, 255, 0.34) !important;
+  background: rgba(8, 31, 66, 0.76) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="top"][data-x-position="center"] .alert-root button.bg-primary-solid {
+  border-color: rgba(106, 228, 255, 0.8) !important;
+  background: radial-gradient(circle at 35% 28%, #1f7194 0%, #123d60 52%, #0a1d42 100%) !important;
+  box-shadow: 0 0 10px rgba(106, 228, 255, 0.35), inset 0 0 8px rgba(186, 245, 255, 0.16) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="top"][data-x-position="center"] .alert-root button:hover {
+  background: linear-gradient(90deg, rgba(31, 113, 148, 0.72), rgba(82, 24, 110, 0.62)) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* File-update notices use Sonner's bottom-center lane, separate from archive confirmations. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="bottom"][data-x-position="center"],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="bottom"][data-x-position="center"] :is(.alert-root.bg-surface-elevated-secondary, [class*="bg-surface-elevated-secondary"]) {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-sonner-toast][data-y-position="bottom"][data-x-position="center"] :is(svg, span, div) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Current Codex success notices render in codex-toast-area, outside the older Sonner lanes. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] .codex-toast-area section[aria-label^="通知"] :is([role="alert"], [role="status"], li, div):has(button) {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] .codex-toast-area section[aria-label^="通知"] :is([role="alert"], [role="status"], li, div):has(button) :is(span, p) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] .codex-toast-area section[aria-label^="通知"] :is([role="alert"], [role="status"], li, div):has(button) button {
+  border-color: rgba(106, 228, 255, 0.34) !important;
+  background: rgba(8, 31, 66, 0.76) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: #dff8ff !important;
+}
+
+/* File-change summaries are fixed above the composer, not Sonner toasts. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content] .bg-surface-elevated-secondary {
+  border-color: rgba(106, 228, 255, 0.72) !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content] .bg-surface-elevated-secondary :is(button, .truncate-text) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content] .bg-surface-elevated-secondary .text-codex-git-added {
+  color: #7cecff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-in-progress-fixed-content] .bg-surface-elevated-secondary .text-codex-git-deleted {
+  color: #ff9edb !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* MCP asks follow-up questions in an auto-resolving inline form above the composer. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-codex-composer-request-navigation][data-user-input-auto-resolution] {
+  border: 1px solid rgba(106, 228, 255, 0.76) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 18px rgba(49, 198, 255, 0.3), 0 0 22px rgba(255, 101, 200, 0.16), inset 0 0 16px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-user-input-auto-resolution] {
+  border: 1px solid rgba(106, 228, 255, 0.76) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 18px rgba(49, 198, 255, 0.3), 0 0 22px rgba(255, 101, 200, 0.16), inset 0 0 16px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+/* The current renderer can put the question card's pale surface one level inside the form. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-user-input-auto-resolution] :is([class~="bg-surface"], [class~="bg-surface-elevated-secondary"]) {
+  border-color: rgba(106, 228, 255, 0.52) !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  box-shadow: inset 0 0 16px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-user-input-auto-resolution] :is(h1, h2, h3, p, span, label, legend, code) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-user-input-auto-resolution] [data-mcp-form-choices] [class~="bg-surface"] {
+  border-color: rgba(106, 228, 255, 0.38) !important;
+  background: linear-gradient(105deg, rgba(7, 32, 69, 0.9), rgba(20, 44, 91, 0.82)) !important;
+  box-shadow: inset 0 0 10px rgba(106, 228, 255, 0.06) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-user-input-auto-resolution] [data-mcp-form-choices] input:checked + [class~="bg-surface"] {
+  border-color: rgba(106, 228, 255, 0.88) !important;
+  background: linear-gradient(105deg, rgba(15, 88, 133, 0.94), rgba(68, 25, 109, 0.9)) !important;
+  box-shadow: 0 0 13px rgba(106, 228, 255, 0.28), inset 0 0 12px rgba(186, 245, 255, 0.1) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-user-input-auto-resolution] :is([class*="border-border/50"], [class*="border-t"][class*="border-border"]) {
+  border-color: rgba(106, 228, 255, 0.28) !important;
+  background: linear-gradient(90deg, rgba(5, 23, 54, 0.72), rgba(34, 14, 72, 0.64)) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-user-input-auto-resolution] button[type="submit"] {
+  border-color: rgba(106, 228, 255, 0.82) !important;
+  background: linear-gradient(135deg, rgba(18, 102, 142, 0.96), rgba(56, 25, 111, 0.92)) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(106, 228, 255, 0.32), inset 0 0 9px rgba(186, 245, 255, 0.12) !important;
+}
+
+/* Standard reply elicitations omit the auto-resolution marker but retain these request-form boundaries. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-codex-character-input-boundary][data-codex-escape-boundary] {
+  border: 1px solid rgba(106, 228, 255, 0.76) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 18px rgba(49, 198, 255, 0.28), 0 0 22px rgba(255, 101, 200, 0.14), inset 0 0 16px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+/* Standard question cards use the same form boundary without the auto-resolution marker. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-codex-character-input-boundary][data-codex-escape-boundary] :is([class~="bg-surface"], [class~="bg-surface-elevated-secondary"]) {
+  border-color: rgba(106, 228, 255, 0.52) !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  box-shadow: inset 0 0 16px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-codex-character-input-boundary][data-codex-escape-boundary] :is(h1, h2, h3, p, span, label, legend, code, svg) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-codex-character-input-boundary][data-codex-escape-boundary] :is(textarea, input) {
+  border-color: rgba(106, 228, 255, 0.68) !important;
+  background: rgba(7, 32, 69, 0.9) !important;
+  color: #effdff !important;
+  -webkit-text-fill-color: #effdff !important;
+  caret-color: #6ae4ff !important;
+  box-shadow: inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-codex-character-input-boundary][data-codex-escape-boundary] :is(textarea, input)::placeholder {
+  color: #9bdbed !important;
+  -webkit-text-fill-color: #9bdbed !important;
+  opacity: 1 !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-codex-character-input-boundary][data-codex-escape-boundary] :is([class*="border-border/50"], [class*="border-t"][class*="border-border"]) {
+  border-color: rgba(106, 228, 255, 0.28) !important;
+  background: linear-gradient(90deg, rgba(5, 23, 54, 0.72), rgba(34, 14, 72, 0.64)) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] form[data-codex-character-input-boundary][data-codex-escape-boundary] button[type="submit"] {
+  border-color: rgba(106, 228, 255, 0.82) !important;
+  background: linear-gradient(135deg, rgba(18, 102, 142, 0.96), rgba(56, 25, 111, 0.92)) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(106, 228, 255, 0.24), 0 0 10px rgba(255, 101, 200, 0.12) !important;
+}
+
+
+/* Your dot sets outgoing-message colors with inline variables; restyle only the user's own bubbles. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] main.thread-pane[style*="--messaging-outgoing-background"] article.message-row.self .message-bubble {
+  border: 1px solid rgba(106, 228, 255, 0.64) !important;
+  background: linear-gradient(135deg, rgba(18, 107, 143, 0.74), rgba(16, 74, 119, 0.86) 58%, rgba(27, 37, 91, 0.9)) !important;
+  color: #ffe46b !important;
+  -webkit-text-fill-color: #ffe46b !important;
+  box-shadow: 0 0 12px rgba(106, 228, 255, 0.22), inset 0 0 12px rgba(186, 245, 255, 0.08) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] main.thread-pane[style*="--messaging-outgoing-background"] article.message-row.self .message-bubble :is(.message-text, .message-text *, [data-markdown-text-style], [data-markdown-text-style] *) {
+  color: #ffe46b !important;
+  -webkit-text-fill-color: #ffe46b !important;
+}
+
+/* Your dot owns a separate thread pane; use the same rainy skyline beneath its conversation. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] main.thread-pane[style*="--messaging-outgoing-background"] {
+  background:
+    linear-gradient(115deg, rgba(5, 10, 27, 0.48), rgba(5, 10, 27, 0.62) 54%, rgba(17, 7, 34, 0.56)),
+    url("__CAM_THEME_ASSET__/rainy-skyline-duel-v1.png") center / cover fixed !important;
+}
+
+/* The create-project icon picker has its own inner surface inside the popover. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-symbol-picker] {
+  border: 1px solid rgba(106, 228, 255, 0.72) !important;
+  background: linear-gradient(135deg, rgba(5, 23, 54, 0.98), rgba(17, 47, 88, 0.96) 54%, rgba(48, 14, 78, 0.96)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 15px rgba(49, 198, 255, 0.28), 0 0 19px rgba(255, 101, 200, 0.14), inset 0 0 12px rgba(106, 228, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-symbol-picker-header],
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-symbol-picker-categories] {
+  border-bottom: 1px solid rgba(106, 228, 255, 0.22) !important;
+  background: linear-gradient(90deg, rgba(5, 21, 49, 0.86), rgba(16, 30, 68, 0.76) 62%, rgba(42, 13, 65, 0.74)) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-symbol-picker-body] {
+  background: rgba(4, 16, 40, 0.48) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-symbol-picker] button[aria-pressed="true"] {
+  border-color: rgba(106, 228, 255, 0.68) !important;
+  background: linear-gradient(135deg, rgba(31, 113, 148, 0.7), rgba(39, 27, 105, 0.64)) !important;
+  color: #dff8ff !important;
+  box-shadow: 0 0 9px rgba(106, 228, 255, 0.2), inset 0 0 8px rgba(186, 245, 255, 0.1) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-symbol-picker-body] button:hover {
+  background: linear-gradient(90deg, rgba(31, 113, 148, 0.52), rgba(82, 24, 110, 0.44)) !important;
+  color: #ffffff !important;
+}
+
+/* Pending/queued follow-up messages use a separate native ComposerRail.Item surface. */
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-rail-item][data-composer-rail-placement="above"].bg-surface-elevated-secondary {
+  border-color: rgba(106, 228, 255, 0.64) !important;
+  background: linear-gradient(110deg, rgba(5, 23, 54, 0.97), rgba(17, 47, 88, 0.94) 58%, rgba(48, 14, 78, 0.94)) !important;
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  backdrop-filter: blur(14px) saturate(125%) !important;
+  box-shadow: 0 0 14px rgba(49, 198, 255, 0.18), inset 0 0 12px rgba(255, 101, 200, 0.06) !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-rail-item][data-composer-rail-placement="above"].bg-surface-elevated-secondary :is(p, span, button, .text-secondary) {
+  color: #dff8ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  text-shadow: none !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-rail-item][data-composer-rail-placement="above"].bg-surface-elevated-secondary svg:not(.text-warning) {
+  color: #a6efff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-rail-item][data-composer-rail-placement="above"].bg-surface-elevated-secondary button {
+  background: transparent !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-rail-item][data-composer-rail-placement="above"].bg-surface-elevated-secondary button:not(:disabled):is(:hover, [data-state="open"]) {
+  background: linear-gradient(100deg, rgba(31, 109, 146, 0.76), rgba(83, 24, 108, 0.68)) !important;
+  color: #dff8ff !important;
+}
+
+:root[data-codex-appearance-manager-theme="rainy-neon"] [data-composer-rail-item][data-composer-rail-placement="above"].bg-surface-elevated-secondary button:focus-visible {
+  outline: 2px solid #ff65c8 !important;
+  outline-offset: 2px;
+}
