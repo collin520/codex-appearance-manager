@@ -2,7 +2,11 @@
 
 [简体中文](README.zh-CN.md)
 
-An unofficial, local macOS appearance tool for Codex Desktop. Edit theme CSS, apply it on demand to the running interface, and remove the manager's styling without modifying the Codex application bundle.
+Create your own Codex theme with Codex, using CSS adaptations accumulated through long-term everyday use.
+
+This unofficial, local macOS toolkit shares the interface selectors and styling fixes we have collected for composers, small popovers, transient cards and other easy-to-miss surfaces. You can ask Codex to help build the manager and create a theme you like on top of those existing rules, instead of having to rediscover each surface yourself. Enchanted Forest and Rainy Neon are reference themes and starting points, not the limit of what this project is for.
+
+The manager applies editable CSS on demand and removes its styling without modifying the Codex application bundle. AI-assisted setup depends on your environment and permissions; the project does not provide a guaranteed unattended installer or a universal theme generator.
 
 ## Status and coverage
 
@@ -12,7 +16,9 @@ This is an **experimental source-only snapshot**, not a stable or officially sup
 
 This project is not affiliated with or endorsed by OpenAI. It styles the interface; it does not add model capabilities or subscription features.
 
-## Included themes
+## Reference themes
+
+These examples show two visual directions using the accumulated adaptations. Reuse their full stylesheets when building a different look; do not replace them with a short stylesheet that drops the small-surface fixes. The existing CSS is a practical starting point, not a fully separated, palette-only theme framework.
 
 | Theme | Visual direction | Package ID |
 | --- | --- | --- |
@@ -35,6 +41,43 @@ The forest keeps its historical `aurora-neon` ID for compatibility. This snapsho
 - A Swift toolchain that supports Swift tools 6.0 or newer and the macOS SDK. Install Apple's Command Line Tools or Xcode as appropriate; check with `swift --version`.
 - Codex Desktop installed locally. Default discovery checks `/Applications/Codex.app`, then `/Applications/ChatGPT.app`; the fallback is not a promise of support for every ChatGPT app version. Other install locations are not selectable in the current GUI.
 - No third-party Swift package dependencies are declared. Windows and Linux are not supported by this macOS application.
+
+## Ask Codex to install and create your theme
+
+Open a local Codex task with access to your chosen working folder. You can copy these prompts, adjusting the theme description to your taste. They are suggested instructions, not a tested one-click automation; review requested actions and permissions.
+
+### Setup prompt
+
+```text
+Help me set up https://github.com/collin520/codex-appearance-manager on this Mac.
+Use an existing checkout if available, or clone it into a folder we agree on.
+Read README.md, docs/security.md and docs/validation.md first. Check macOS and
+the Swift toolchain; ask before installing missing tools or overwriting files.
+Run the documented tests, Release build and packaging script. Show me the
+resulting app path and explain the manual connection, injection and restore steps.
+Do not modify the Codex bundle, force-quit or restart Codex, inject automatically,
+or disable system protections. Stop and report environment or permission blockers.
+```
+
+### Theme prompt
+
+```text
+Using Codex Appearance Manager, help me create a separate theme in this style:
+[describe the colors, mood, background, typography and usual window size].
+Read docs/theme-format.md and the complete CSS of a reference theme first.
+Preserve its existing selectors, nested-surface fixes and functional controls.
+Create a new theme package with its own valid ID; update all theme-root scopes,
+and consistently rename any theme-specific variables and animation names.
+Adapt colors, gradients, borders, shadows and local artwork, including hardcoded
+colors, while preserving readable contrast and semantic diff/error colors.
+Back up local edits and leave the original themes unchanged. By default, do not
+change Swift code. Report any theme-ID-specific Shadow DOM adaptation separately.
+Verify package structure and asset references; run existing source tests, then
+guide me through reloading the manager, draft reload and explicit injection.
+Do not claim complete visual coverage without testing actual UI states.
+```
+
+See [theme creation steps and limitations](docs/theme-format.md#reuse-the-existing-coverage) before treating a copied theme as complete.
 
 ## Build from source
 
